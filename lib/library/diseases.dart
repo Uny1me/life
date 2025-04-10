@@ -1,0 +1,16 @@
+final List<String> healthConditions = [
+  'Diabetes',
+  'Hypertension',
+  'Heart Disease',
+  'Asthma',
+  'Arthritis',
+  'Gastritis',
+  'Eczema',
+  'PCOS',
+  'Endometriosis',
+  'Anxiety',
+  'Depression',
+  'Malaria',
+  'Typhoid',
+  'Other',
+];
