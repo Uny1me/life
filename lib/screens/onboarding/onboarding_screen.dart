@@ -92,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onPressed: () {
                   if (_currentPage == onboardingData.length - 1) {
                     // Navigate to the next screen or perform an action
-                    Navigator.pushReplacementNamed(context, '/home');
+                    Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
                   } else {
                     _pageController.nextPage(
                       duration: const Duration(milliseconds: 300),

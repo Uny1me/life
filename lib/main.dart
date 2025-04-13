@@ -2,6 +2,7 @@ import 'package:aproko_app/models/medication.dart';
 import 'package:aproko_app/screens/auth/signup_screen.dart';
 import 'package:aproko_app/screens/challenges/challenges_screen.dart';
 import 'package:aproko_app/screens/home/account_screen.dart';
+import 'package:aproko_app/screens/home/discover_screen.dart';
 import 'package:aproko_app/screens/medications/add_medication_screen.dart';
 import 'package:aproko_app/screens/medications/medication_details_screen.dart';
 import 'package:aproko_app/screens/notifications/notification_settings_screen.dart';
@@ -19,6 +20,8 @@ import 'providers/theme_provider.dart';
 import 'providers/auth_provider.dart';
 import 'providers/medication_provider.dart';
 import 'providers/notification_settings_provider.dart';
+import 'providers/challenge_provider.dart';
+import 'data/mock_challenges.dart';
 import 'screens/onboarding/onboarding_screen.dart';
 import 'screens/auth/login_screen.dart';
 import 'screens/home/home_screen.dart';
@@ -60,6 +63,13 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (_) => AuthProvider()),
             ChangeNotifierProvider(create: (_) => MedicationProvider()),
             ChangeNotifierProvider(create: (_) => NotificationSettingsProvider()),
+            ChangeNotifierProvider(create: (_) {
+              final provider = ChallengeProvider();
+              for (final challenge in mockChallenges) {
+                provider.addChallenge(challenge);
+              }
+              return provider;
+            }),
           ],
           child: Consumer<ThemeProvider>(
             builder: (context, themeProvider, child) {
@@ -103,6 +113,10 @@ class MyApp extends StatelessWidget {
                       GoRoute(
                         path: '/medications',
                         builder: (context, state) => const MedicationsScreen(),
+                      ),
+                      GoRoute(
+                        path: '/discover',
+                        builder: (context, state) => const DiscoverScreen(),
                       ),
                       GoRoute(
                         path: '/add-medication',
