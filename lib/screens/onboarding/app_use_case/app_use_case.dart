@@ -2,6 +2,8 @@ import 'package:aproko_app/core/mock/mock_app_use_cases.dart';
 import 'package:aproko_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:go_router/go_router.dart';
 
 class AppUseCase extends StatefulWidget {
   const AppUseCase({super.key});
@@ -63,7 +65,12 @@ class AppUseCaseState extends State<AppUseCase> {
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
               ),
-              onPressed: () {},
+              onPressed: () async {
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                await prefs.setBool('isFirstTime', false);
+                // ignore: use_build_context_synchronously
+                context.go('/login');
+              },
               child: const Text('Next'),
             ),
           ],

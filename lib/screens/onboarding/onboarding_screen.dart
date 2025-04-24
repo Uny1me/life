@@ -1,5 +1,7 @@
 import 'package:aproko_app/models/onboarding_data.dart';
+import 'package:aproko_app/screens/home/account_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -92,7 +94,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onPressed: () {
                   if (_currentPage == onboardingData.length - 1) {
                     // Navigate to the next screen or perform an action
-                    Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+                    context.go('/app-use-case');
                   } else {
                     _pageController.nextPage(
                       duration: const Duration(milliseconds: 300),

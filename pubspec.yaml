@@ -43,7 +43,7 @@ dependencies:
   flutter_secure_storage: ^9.0.0
   image_picker: ^1.0.7
   cached_network_image: ^3.3.1
-  flutter_local_notifications: ^16.3.2
+  flutter_local_notifications: ^19.1.0
   permission_handler: ^11.3.0
   flutter_launcher_icons: ^0.13.1
   flutter_native_splash: ^2.3.10
@@ -120,3 +120,5 @@ flutter:
     - assets/images/hard.png
     - assets/images/fast.png
     - assets/icons/
+    - assets/images/nutrition/
+    - assets/images/fitness/

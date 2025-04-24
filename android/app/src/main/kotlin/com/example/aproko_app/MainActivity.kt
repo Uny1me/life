@@ -1,4 +1,4 @@
-package com.example.aproko_app
+package com.lifeline.main
 
 import io.flutter.embedding.android.FlutterActivity
 

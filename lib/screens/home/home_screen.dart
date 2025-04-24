@@ -1,4 +1,3 @@
-import 'package:aproko_app/screens/home/discover_screen.dart';
 import 'package:flutter/material.dart';
 import 'discover_screen.dart';
 import 'nutrition_screen.dart';
